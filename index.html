@@ -1,1724 +1,464 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pack de Moldes Femininos — Costure em Casa</title>
-<meta name="description" content="20 moldes femininos prontos para imprimir, do PP ao G5, por apenas R$5,90. Ideal para iniciantes!">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-
-/* ── TOKENS ─────────────────────────────────────────── */
-:root {
-  --rose:       #d4667a;
-  --rose-light: #f5d5db;
-  --rose-pale:  #fdf0f2;
-  --rose-dark:  #b04d62;
-  --cream:      #faf7f4;
-  --warm-white: #fff9f9;
-  --charcoal:   #1e1a1b;
-  --mid:        #5a4f52;
-  --muted:      #9b8c8f;
-  --gold:       #c9a84c;
-  --gold-light: #f7ecd4;
-  --shadow-sm:  0 2px 12px rgba(180,80,100,.10);
-  --shadow-md:  0 8px 32px rgba(180,80,100,.15);
-  --shadow-lg:  0 20px 60px rgba(180,80,100,.18);
-  --r-sm: 12px;
-  --r-md: 20px;
-  --r-lg: 32px;
-}
-
-/* ── RESET ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--charcoal);
-  line-height: 1.65;
-  overflow-x: hidden;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-
-/* ── UTILITY ─────────────────────────────────────────── */
-.container { width: 100%; max-width: 680px; margin: 0 auto; padding: 0 20px; }
-.serif { font-family: 'Playfair Display', serif; }
-.tag {
-  display: inline-block;
-  background: var(--rose-light);
-  color: var(--rose-dark);
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  border-radius: 100px;
-}
-
-/* ── ANIMATIONS ──────────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-rose {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212,102,122,.45); }
-  70%       { box-shadow: 0 0 0 14px rgba(212,102,122,0); }
-}
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.fade-up { animation: fadeUp .7s ease both; }
-.delay-1 { animation-delay: .15s; }
-.delay-2 { animation-delay: .30s; }
-.delay-3 { animation-delay: .45s; }
-.delay-4 { animation-delay: .60s; }
-
-/* ── BUTTONS ─────────────────────────────────────────── */
-.btn {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 18px 28px;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-align: center;
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-}
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
-  transition: left .4s ease;
-}
-.btn:hover::after { left: 150%; }
-.btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
-.btn:active { transform: translateY(0); }
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
-  color: #fff;
-  box-shadow: var(--shadow-md);
-  animation: pulse-rose 2.4s ease infinite;
-  font-size: 1.05rem;
-  padding: 20px 28px;
-}
-.btn-primary:hover { box-shadow: var(--shadow-lg); animation: none; }
-
-.btn-secondary {
-  background: var(--charcoal);
-  color: #fff;
-  box-shadow: 0 6px 24px rgba(30,26,27,.2);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--rose);
-  color: var(--rose);
-  font-size: .9rem;
-  padding: 14px 24px;
-}
-.btn-outline:hover { background: var(--rose-pale); }
-
-/* ── TOP BAR ─────────────────────────────────────────── */
-.topbar {
-  background: var(--charcoal);
-  color: #fff;
-  text-align: center;
-  font-size: .78rem;
-  font-weight: 500;
-  letter-spacing: .06em;
-  padding: 9px 20px;
-}
-.topbar span { color: var(--rose-light); }
-
-/* ── HERO ─────────────────────────────────────────────── */
-.hero {
-  background: var(--warm-white);
-  padding: 52px 0 48px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--rose-light) 0%, transparent 70%);
-  opacity: .55;
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: -80px;
-  width: 350px; height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--rose-light) 0%, transparent 70%);
-  opacity: .4;
-  pointer-events: none;
-}
-.hero .container { position: relative; z-index: 1; }
-
-.hero-icon {
-  width: 72px; height: 72px;
-  background: linear-gradient(135deg, var(--rose-light), #fbe8ec);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 24px;
-  box-shadow: var(--shadow-sm);
-  font-size: 2rem;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.65rem, 5vw, 2.4rem);
-  font-weight: 900;
-  line-height: 1.2;
-  color: var(--charcoal);
-  margin-bottom: 18px;
-}
-.hero h1 em {
-  font-style: italic;
-  color: var(--rose);
-}
-
-.hero-sub {
-  font-size: 1rem;
-  color: var(--mid);
-  margin-bottom: 32px;
-  max-width: 440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.price-badge {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--rose-pale);
-  border: 1.5px solid var(--rose-light);
-  border-radius: var(--r-md);
-  padding: 16px 28px;
-  margin-bottom: 32px;
-}
-.price-badge .old-price {
-  font-size: .85rem;
-  color: var(--muted);
-  text-decoration: line-through;
-  letter-spacing: .02em;
-}
-.price-badge .new-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--rose-dark);
-  line-height: 1;
-  margin: 2px 0 4px;
-}
-.price-badge .price-note {
-  font-size: .75rem;
-  color: var(--mid);
-  font-weight: 500;
-}
-
-.hero-trust {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-top: 24px;
-}
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: .78rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-.trust-item .dot {
-  width: 7px; height: 7px;
-  background: var(--rose);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ── DIVIDER ─────────────────────────────────────────── */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rose-light), transparent);
-  margin: 0;
-}
-
-/* ── SECTION BASE ────────────────────────────────────── */
-section { padding: 56px 0; }
-.section-label {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 4vw, 1.9rem);
-  font-weight: 700;
-  text-align: center;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-  line-height: 1.25;
-}
-.section-sub {
-  text-align: center;
-  color: var(--mid);
-  font-size: .95rem;
-  margin-bottom: 40px;
-  max-width: 440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── BENEFITS ────────────────────────────────────────── */
-.benefits { background: var(--cream); }
-.benefits-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-@media (min-width: 500px) {
-  .benefits-grid { grid-template-columns: 1fr 1fr 1fr; }
-}
-.benefit-card {
-  background: #fff;
-  border: 1px solid var(--rose-light);
-  border-radius: var(--r-sm);
-  padding: 20px 14px;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: transform .2s, box-shadow .2s;
-}
-.benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.benefit-icon {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  display: block;
-}
-.benefit-title {
-  font-weight: 600;
-  font-size: .85rem;
-  color: var(--charcoal);
-  line-height: 1.3;
-}
-
-/* ── PLANS ───────────────────────────────────────────── */
-.plans { background: var(--warm-white); }
-.plans-grid {
-  display: grid;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-@media (min-width: 520px) {
-  .plans-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.plan-card {
-  background: #fff;
-  border: 2px solid var(--rose-light);
-  border-radius: var(--r-md);
-  padding: 28px 22px;
-  text-align: center;
-  position: relative;
-  transition: transform .2s, box-shadow .2s;
-}
-.plan-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.plan-card.featured {
-  border-color: var(--rose);
-  background: linear-gradient(160deg, #fff 60%, var(--rose-pale) 100%);
-  box-shadow: var(--shadow-md);
-}
-
-.plan-badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
-  color: #fff;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(180,60,80,.3);
-}
-
-.plan-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 6px;
-}
-.plan-qty {
-  font-size: .82rem;
-  color: var(--muted);
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.plan-price-old {
-  font-size: .8rem;
-  color: var(--muted);
-  text-decoration: line-through;
-  margin-bottom: 2px;
-}
-.plan-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--rose-dark);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.plan-features {
-  list-style: none;
-  text-align: left;
-  margin-bottom: 24px;
-  font-size: .84rem;
-  color: var(--mid);
-}
-.plan-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 4px 0;
-}
-.plan-features li .check { color: var(--rose); flex-shrink: 0; font-weight: 700; }
-
-.upsell-note {
-  text-align: center;
-  background: var(--gold-light);
-  border: 1px solid #e8d4a0;
-  border-radius: var(--r-sm);
-  padding: 14px 20px;
-  font-size: .88rem;
-  color: #7a5f20;
-  font-weight: 500;
-  margin-bottom: 32px;
-}
-.upsell-note strong { color: #5a4210; }
-
-/* ── BONUSES ─────────────────────────────────────────── */
-.bonuses { background: var(--charcoal); }
-.bonuses .section-title { color: #fff; }
-.bonuses .section-sub { color: rgba(255,255,255,.55); }
-.bonuses-list { display: grid; gap: 12px; }
-.bonus-item {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--r-sm);
-  padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: background .2s;
-}
-.bonus-item:hover { background: rgba(255,255,255,.1); }
-.bonus-icon {
-  width: 46px; height: 46px;
-  background: linear-gradient(135deg, var(--rose-light), #fbe8ec);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
-.bonus-text h3 {
-  font-size: .95rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.bonus-text p {
-  font-size: .8rem;
-  color: rgba(255,255,255,.5);
-  line-height: 1.45;
-}
-.bonus-gratis {
-  display: inline-block;
-  background: var(--gold);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 2px 10px;
-  border-radius: 100px;
-  margin-bottom: 6px;
-}
-
-/* ── FOR WHOM ────────────────────────────────────────── */
-.forwhom { background: var(--rose-pale); }
-.forwhom-grid { display: grid; gap: 12px; }
-@media (min-width: 500px) {
-  .forwhom-grid { grid-template-columns: 1fr 1fr; }
-}
-.forwhom-card {
-  background: #fff;
-  border-radius: var(--r-sm);
-  padding: 20px 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  box-shadow: var(--shadow-sm);
-}
-.forwhom-num {
-  width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .85rem;
-  font-weight: 700;
-  color: #fff;
-  flex-shrink: 0;
-}
-.forwhom-card h3 { font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
-.forwhom-card p  { font-size: .8rem; color: var(--mid); line-height: 1.4; }
-
-/* ── GUARANTEE ───────────────────────────────────────── */
-.guarantee { background: #fff; }
-.guarantee-box {
-  border: 2px solid var(--rose-light);
-  border-radius: var(--r-lg);
-  padding: 36px 28px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.guarantee-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at top center, var(--rose-pale) 0%, transparent 70%);
-  pointer-events: none;
-}
-.guarantee-badge {
-  width: 80px; height: 80px;
-  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 20px;
-  box-shadow: 0 8px 24px rgba(180,60,80,.3);
-  position: relative;
-}
-.guarantee-box h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  position: relative;
-}
-.guarantee-box p {
-  font-size: .9rem;
-  color: var(--mid);
-  max-width: 380px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* ── FINAL CTA ───────────────────────────────────────── */
-.final-cta {
-  background: linear-gradient(160deg, var(--charcoal) 0%, #2e1a20 100%);
-  padding: 64px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.final-cta::before {
-  content: '';
-  position: absolute;
-  top: -100px; left: 50%;
-  transform: translateX(-50%);
-  width: 500px; height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,102,122,.18) 0%, transparent 65%);
-  pointer-events: none;
-}
-.final-cta .container { position: relative; }
-.final-cta h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 5vw, 2.1rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-.final-cta h2 em { color: var(--rose-light); font-style: italic; }
-.final-cta p {
-  color: rgba(255,255,255,.55);
-  font-size: .9rem;
-  margin-bottom: 36px;
-}
-.final-cta .price-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 32px;
-}
-.final-cta .final-old {
-  font-size: .9rem;
-  color: rgba(255,255,255,.35);
-  text-decoration: line-through;
-}
-.final-cta .final-new {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--rose-light);
-  line-height: 1;
-}
-.final-cta .final-plan {
-  font-size: .78rem;
-  color: rgba(255,255,255,.4);
-  font-weight: 500;
-}
-
-.final-trust {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
-}
-.final-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: .78rem;
-  color: rgba(255,255,255,.45);
-}
-.final-trust-item span { font-size: 1rem; }
-
-/* ── FOOTER ──────────────────────────────────────────── */
-.footer {
-  background: var(--charcoal);
-  border-top: 1px solid rgba(255,255,255,.06);
-  padding: 28px 20px;
-  text-align: center;
-  font-size: .75rem;
-  color: rgba(255,255,255,.25);
-  line-height: 1.8;
-}
-.footer a { color: rgba(255,255,255,.4); }
-
-/* ── STICKY BOTTOM (mobile) ──────────────────────────── */
-.sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: #fff;
-  box-shadow: 0 -4px 24px rgba(0,0,0,.12);
-  padding: 12px 20px;
-  z-index: 999;
-}
-.sticky-cta .btn { max-width: 100%; font-size: .9rem; padding: 16px; }
-@media (max-width: 600px) { .sticky-cta { display: block; } }
-
-/* ── SCROLL REVEAL ───────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .65s ease, transform .65s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── PLANS FUNNEL ────────────────────────────────────── */
-.plans-funnel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  width: 100%;
-}
-.funnel-step {
-  width: 100%;
-  max-width: 460px;
-}
-.funnel-step-label {
-  text-align: center;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-.featured-step-label {
-  color: var(--rose-dark);
-  font-size: .75rem;
-}
-.funnel-arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6px 0;
-  width: 100%;
-  max-width: 460px;
-}
-.funnel-arrow-line {
-  width: 2px;
-  height: 16px;
-  background: linear-gradient(to bottom, var(--rose-light), var(--rose));
-}
-.funnel-arrow-bubble {
-  background: var(--gold-light);
-  border: 1px solid #e8d4a0;
-  border-radius: var(--r-sm);
-  padding: 10px 16px;
-  font-size: .82rem;
-  color: #7a5f20;
-  text-align: center;
-  width: 100%;
-  line-height: 1.45;
-}
-.funnel-arrow-bubble span { margin-right: 4px; }
-.funnel-arrow-icon {
-  font-size: 1.4rem;
-  color: var(--rose);
-  line-height: 1;
-  margin-top: 2px;
-}
-
-</style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  🪡 Entrega <span>100% digital</span> — Acesso imediato após o pagamento
-</div>
-
-<!-- ══ HERO ══════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="container">
-
-    <div class="hero-icon fade-up">✂️</div>
-
-    <div class="tag fade-up delay-1">Pack de Moldes Femininos</div>
-
-    <h1 class="fade-up delay-2">
-      1000 moldes de costura prontos para imprimir e usar em casa —
-      <em>mesmo sendo iniciante</em>
-    </h1>
-
-    <p class="hero-sub fade-up delay-3">
-      Comece agora com <strong>150 moldes prontos para imprimir</strong> (PP ao G5)
-      por apenas <strong>R$5,90</strong> — ou faça upgrade para 1000 moldes + bônus
-    </p>
-
-    <div class="price-badge fade-up delay-3">
-      <span class="old-price">De R$29,90</span>
-      <span class="new-price">R$5,90</span>
-      <span class="price-note">150 moldes em PDF • Acesso imediato</span>
-    </div>
-
-    <p class="fade-up delay-3" style="font-size:.75rem;color:var(--muted);text-align:center;letter-spacing:.04em;margin-bottom:10px;">
-      ✦ Acesso imediato após a compra &nbsp;•&nbsp; Arquivos em PDF
-    </p>
-
-    <!-- CHECKOUT LINK: substitua o href pelo link do seu checkout -->
-    <a href="SEU_LINK_CHECKOUT_BASICO" class="btn btn-primary fade-up delay-4">
-      ✦ QUERO MEUS MOLDES AGORA
-    </a>
-
-    <p class="fade-up delay-4" style="margin-top:14px;font-size:.78rem;color:var(--muted);text-align:center;">
-      Ou veja o <a href="#planos" style="color:var(--rose);font-weight:600;text-decoration:underline;">pacote completo com 1000 moldes por R$19,90 ↓</a>
-    </p>
-
-    <div class="hero-trust fade-up delay-4">
-      <span class="trust-item"><span class="dot"></span>Pagamento 100% seguro</span>
-      <span class="trust-item"><span class="dot"></span>Garantia de 7 dias</span>
-      <span class="trust-item"><span class="dot"></span>Entrega imediata</span>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ BENEFITS ══════════════════════════════════════════ -->
-<section class="benefits">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Por que você vai amar</span></div>
-    <h2 class="section-title reveal">Tudo pensado para simplificar sua costura</h2>
-    <p class="section-sub reveal">Sem complicação. Só imprimir e costurar.</p>
-
-    <div class="benefits-grid reveal">
-
-      <div class="benefit-card">
-        <span class="benefit-icon">📄</span>
-        <span class="benefit-title">Moldes organizados e fáceis de imprimir</span>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon">📏</span>
-        <span class="benefit-title">Tamanhos do PP ao G5</span>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon">🌸</span>
-        <span class="benefit-title">Ideal para iniciantes</span>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon">💰</span>
-        <span class="benefit-title">Economize com costureira</span>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon">🖨️</span>
-        <span class="benefit-title">Use papel A4 comum</span>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon">⚡</span>
-        <span class="benefit-title">Acesso instantâneo após o pagamento</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ EXEMPLOS DE MOLDES ════════════════════════════════ -->
-<style>
-/* ── CATEGORY CARDS — premium no-image version ──────── */
-.cat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-@media (min-width: 540px) { .cat-grid { gap: 20px; } }
-
-.cat-card {
-  background: #fff;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(180,80,100,.10);
-  border: 1px solid var(--rose-light);
-  display: flex;
-  flex-direction: column;
-  transition: transform .22s ease, box-shadow .22s ease;
-}
-.cat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 40px rgba(180,80,100,.18);
-}
-
-/* ── visual header panel (replaces photo) */
-.cat-header {
-  position: relative;
-  width: 100%;
-  padding: 28px 18px 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  overflow: hidden;
-}
-.cat-header::before {               /* subtle dot-grid pattern */
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,.45) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
-}
-.cat-header::after {                /* bottom fade */
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(255,255,255,.55), transparent);
-  pointer-events: none;
-}
-
-.cat-icon-wrap {
-  width: 58px; height: 58px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(0,0,0,.12);
-  position: relative; z-index: 1;
-  border: 2.5px solid rgba(255,255,255,.8);
-}
-
-.cat-count {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  line-height: 1;
-  position: relative; z-index: 1;
-  letter-spacing: -.01em;
-}
-.cat-count-label {
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  opacity: .7;
-  position: relative; z-index: 1;
-  margin-top: -4px;
-}
-
-/* ── card body */
-.cat-body {
-  padding: 14px 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1;
-}
-
-.cat-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  letter-spacing: .01em;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.cat-title-emoji { font-size: 1.1rem; }
-
-.cat-divider {
-  height: 1px;
-  background: var(--rose-light);
-}
-
-.cat-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.cat-tag {
-  font-size: .68rem;
-  background: var(--cream);
-  color: var(--mid);
-  border: 1px solid var(--rose-light);
-  border-radius: 100px;
-  padding: 3px 9px;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: background .15s, color .15s;
-}
-.cat-card:hover .cat-tag {
-  background: var(--rose-pale);
-  color: var(--rose-dark);
-  border-color: var(--rose);
-}
-
-.cat-pill {
-  display: inline-block;
-  font-size: .6rem;
-  background: var(--rose-pale);
-  color: var(--rose-dark);
-  padding: 3px 10px;
-  border-radius: 100px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  align-self: flex-start;
-}
-
-.checklist-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 20px;
-  max-width: 420px;
-  margin: 0 auto 40px;
-}
-.checklist-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: .9rem;
-  font-weight: 500;
-  color: var(--charcoal);
-}
-.checklist-item .ck { color: var(--rose); font-weight: 700; }
-</style>
-
-<section class="moldes-exemplos" style="background:var(--warm-white);padding:56px 0;">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Prévia do conteúdo</span></div>
-    <h2 class="section-title reveal">Alguns dos moldes incluídos no pack</h2>
-    <p class="section-sub reveal">Modelos organizados por categoria para facilitar sua escolha e impressão.</p>
-
-    <!-- Category cards — premium, no external images -->
-    <div class="cat-grid reveal">
-
-      <!-- ① FEMININO -->
-      <div class="cat-card">
-        <div class="cat-header" style="background:linear-gradient(145deg,#fce8ec,#f5d0d8);">
-          <div class="cat-icon-wrap" style="background:linear-gradient(135deg,#e8b4be,#d4667a);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-              <path d="M11 6 Q9 9 8 13 L7 24 Q11 26 15 26 Q19 26 23 24 L22 13 Q21 9 19 6 Q17 4.5 15 5 Q13 4.5 11 6Z" fill="rgba(255,255,255,.35)"/>
-              <path d="M11 6 Q9 9 8 13 L7 24 Q11 26 15 26 Q19 26 23 24 L22 13 Q21 9 19 6" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-              <path d="M9 15 Q15 18 21 15" stroke="rgba(255,255,255,.7)" stroke-width="1.1" fill="none"/>
-              <path d="M13 6 Q15 8.5 17 6" stroke="rgba(255,255,255,.7)" stroke-width="1.1" fill="none"/>
-            </svg>
-          </div>
-          <div class="cat-count" style="color:#8b3a4a;font-size:.95rem;font-weight:600;letter-spacing:.02em;">Feminino</div>
-          <div class="cat-count-label" style="color:#b04d62;">vestidos • saias • blusas</div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-title"><span class="cat-title-emoji">👗</span>Feminino</div>
-          <div class="cat-divider"></div>
-          <div class="cat-tags">
-            <span class="cat-tag">Vestidos</span>
-            <span class="cat-tag">Saias</span>
-            <span class="cat-tag">Blusas</span>
-            <span class="cat-tag">Conjuntos</span>
-            <span class="cat-tag">Macacões</span>
-          </div>
-          <div class="cat-pill">PP – G5</div>
-        </div>
-      </div>
-
-      <!-- ② MASCULINO -->
-      <div class="cat-card">
-        <div class="cat-header" style="background:linear-gradient(145deg,#ddeaf8,#c4d8f0);">
-          <div class="cat-icon-wrap" style="background:linear-gradient(135deg,#7aaad4,#3a6ea5);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-              <path d="M11 5 L8 9 L10.5 11 L10.5 24 L19.5 24 L19.5 11 L22 9 L19 5 Q17 7 15 7 Q13 7 11 5Z" fill="rgba(255,255,255,.25)"/>
-              <path d="M11 5 L8 9 L10.5 11 L10.5 24 L19.5 24 L19.5 11 L22 9 L19 5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M11 5 Q15 8.5 19 5" stroke="rgba(255,255,255,.7)" stroke-width="1.1" fill="none"/>
-              <line x1="15" y1="8" x2="15" y2="22" stroke="rgba(255,255,255,.4)" stroke-width="1" stroke-dasharray="2,2"/>
-              <rect x="11" y="13" width="4" height="3" rx="0.8" stroke="rgba(255,255,255,.6)" stroke-width="1" fill="none"/>
-            </svg>
-          </div>
-          <div class="cat-count" style="color:#1e3d6b;font-size:.95rem;font-weight:600;letter-spacing:.02em;">Masculino</div>
-          <div class="cat-count-label" style="color:#2d5a8a;">camisas • calças • bermudas</div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-title"><span class="cat-title-emoji">👔</span>Masculino</div>
-          <div class="cat-divider" style="background:#c4d8f0;"></div>
-          <div class="cat-tags">
-            <span class="cat-tag" style="border-color:#c4d8f0;">Camisas</span>
-            <span class="cat-tag" style="border-color:#c4d8f0;">Calças</span>
-            <span class="cat-tag" style="border-color:#c4d8f0;">Bermudas</span>
-            <span class="cat-tag" style="border-color:#c4d8f0;">Moletons</span>
-          </div>
-          <div class="cat-pill" style="background:#ddeaf8;color:#2d5a8a;">PP – GG</div>
-        </div>
-      </div>
-
-      <!-- ③ INFANTIL -->
-      <div class="cat-card">
-        <div class="cat-header" style="background:linear-gradient(145deg,#ede4f8,#d8c8f0);">
-          <div class="cat-icon-wrap" style="background:linear-gradient(135deg,#b490d8,#9b4dca);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-              <path d="M12 7 Q10 10 9 13 L8.5 23 Q12 25 15 25 Q18 25 21.5 23 L21 13 Q20 10 18 7 Q16.5 5.5 15 6 Q13.5 5.5 12 7Z" fill="rgba(255,255,255,.3)"/>
-              <path d="M12 7 Q10 10 9 13 L8.5 23 Q12 25 15 25 Q18 25 21.5 23 L21 13 Q20 10 18 7" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-              <path d="M12.5 7 Q15 5 17.5 7" stroke="rgba(255,255,255,.7)" stroke-width="1.2" fill="none"/>
-              <circle cx="15" cy="7" r="1" fill="rgba(255,255,255,.9)"/>
-              <!-- star -->
-              <path d="M21 6 L21.5 7.5 L23 7.5 L21.8 8.5 L22.3 10 L21 9.1 L19.7 10 L20.2 8.5 L19 7.5 L20.5 7.5Z" fill="#f7d070" opacity=".9"/>
-            </svg>
-          </div>
-          <div class="cat-count" style="color:#3d1a6e;font-size:.95rem;font-weight:600;letter-spacing:.02em;">Infantil</div>
-          <div class="cat-count-label" style="color:#5d2a80;">vestidos • conjuntos • básicos</div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-title"><span class="cat-title-emoji">🧸</span>Infantil</div>
-          <div class="cat-divider" style="background:#d8c8f0;"></div>
-          <div class="cat-tags">
-            <span class="cat-tag" style="border-color:#d8c8f0;">Vestidos</span>
-            <span class="cat-tag" style="border-color:#d8c8f0;">Conjuntos</span>
-            <span class="cat-tag" style="border-color:#d8c8f0;">Básicos</span>
-            <span class="cat-tag" style="border-color:#d8c8f0;">Pijamas</span>
-          </div>
-          <div class="cat-pill" style="background:#ede4f8;color:#5d2a80;">RN – 12</div>
-        </div>
-      </div>
-
-      <!-- ④ PET -->
-      <div class="cat-card">
-        <div class="cat-header" style="background:linear-gradient(145deg,#fef4d8,#f5e4a8);">
-          <div class="cat-icon-wrap" style="background:linear-gradient(135deg,#e0c060,#c9a84c);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-              <ellipse cx="15" cy="18" rx="5.5" ry="4.5" fill="rgba(255,255,255,.3)"/>
-              <ellipse cx="15" cy="18" rx="5.5" ry="4.5" stroke="#fff" stroke-width="1.5" fill="none"/>
-              <ellipse cx="10" cy="13" rx="2" ry="2" fill="rgba(255,255,255,.6)"/>
-              <ellipse cx="15" cy="11.5" rx="2" ry="2" fill="rgba(255,255,255,.6)"/>
-              <ellipse cx="20" cy="13" rx="2" ry="2" fill="rgba(255,255,255,.6)"/>
-              <path d="M13.5 19.5 Q15 17.8 16.5 19.5 Q18 21.2 15 23 Q12 21.2 13.5 19.5Z" fill="rgba(212,102,122,.8)"/>
-            </svg>
-          </div>
-          <div class="cat-count" style="color:#6b4800;font-size:.95rem;font-weight:600;letter-spacing:.02em;">Pet</div>
-          <div class="cat-count-label" style="color:#8a6a22;">roupinhas • acessórios</div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-title"><span class="cat-title-emoji">🐾</span>Pet</div>
-          <div class="cat-divider" style="background:#f0dfa0;"></div>
-          <div class="cat-tags">
-            <span class="cat-tag" style="border-color:#f0dfa0;">Roupinhas</span>
-            <span class="cat-tag" style="border-color:#f0dfa0;">Camisetas</span>
-            <span class="cat-tag" style="border-color:#f0dfa0;">Acessórios</span>
-          </div>
-          <div class="cat-pill" style="background:var(--gold-light);color:#7a5f20;">XS – XG</div>
-        </div>
-      </div>
-
-    </div><!-- /cat-grid -->
-
-    <!-- Nota final -->
-    <p class="reveal" style="
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack de Moldes Femininos — Costure em Casa</title>
+  <meta name="description" content="1000 moldes de costura prontos para imprimir e usar em casa mesmo sendo iniciante. Acesso imediato, arquivos em PDF, vídeo aulas, e-book e bônus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --rose:#d4667a;
+      --rose-dark:#b04d62;
+      --rose-light:#f5d5db;
+      --rose-pale:#fdf0f2;
+      --cream:#faf7f4;
+      --warm:#fff9f9;
+      --charcoal:#1e1a1b;
+      --mid:#5a4f52;
+      --muted:#948689;
+      --gold:#c9a84c;
+      --gold-light:#f7ecd4;
+      --line:#ecdde1;
+      --white:#ffffff;
+      --shadow-sm:0 2px 12px rgba(180,80,100,.08);
+      --shadow-md:0 8px 32px rgba(180,80,100,.12);
+      --shadow-lg:0 18px 50px rgba(180,80,100,.16);
+      --r-sm:14px;
+      --r-md:22px;
+      --r-lg:32px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:var(--cream);
+      color:var(--charcoal);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+    .serif{font-family:'Playfair Display',serif}
+
+    .topbar{
+      background:var(--charcoal);
+      color:#fff;
       text-align:center;
+      font-size:.78rem;
+      font-weight:500;
+      padding:9px 16px;
+      letter-spacing:.04em;
+    }
+    .topbar span{color:var(--rose-light)}
+
+    .tag{
+      display:inline-block;
+      background:var(--rose-light);
+      color:var(--rose-dark);
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:5px 14px;
+      border-radius:999px;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      max-width:440px;
+      margin:0 auto;
+      border:none;
+      border-radius:999px;
+      padding:18px 28px;
+      text-align:center;
+      font-weight:700;
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--rose) 0%,var(--rose-dark) 100%);
+      color:#fff;
+      box-shadow:var(--shadow-md);
+      font-size:1rem;
+    }
+    .btn-outline{
+      border:2px solid var(--rose);
+      color:var(--rose);
+      background:transparent;
+      font-size:.95rem;
+      padding:14px 22px;
+    }
+
+    .trustline{
+      text-align:center;
+      font-size:.78rem;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    .hero{
+      background:var(--warm);
+      padding:52px 0 48px;
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+    }
+    .hero:before,
+    .hero:after{
+      content:'';
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      background:radial-gradient(circle,var(--rose-light) 0%,transparent 70%);
+      opacity:.5;
+    }
+    .hero:before{width:320px;height:320px;top:-90px;right:-80px}
+    .hero:after{width:360px;height:360px;bottom:-120px;left:-100px;opacity:.35}
+    .hero .container{position:relative;z-index:2}
+    .hero-icon{
+      width:74px;height:74px;
+      border-radius:50%;
+      margin:0 auto 22px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--rose-light),#fbe8ec);
+      box-shadow:var(--shadow-sm);
+      font-size:2rem;
+    }
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.7rem,5vw,2.5rem);
+      line-height:1.18;
+      margin:18px 0 16px;
+      color:var(--charcoal);
+    }
+    .hero h1 em{font-style:italic;color:var(--rose)}
+    .hero-sub{
+      max-width:500px;
+      margin:0 auto 24px;
+      font-size:1rem;
+      color:var(--mid);
+    }
+    .hero-support{
+      max-width:520px;
+      margin:0 auto 26px;
+      font-size:.92rem;
+      color:var(--mid);
+    }
+
+    .price-badge{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      background:var(--rose-pale);
+      border:1.5px solid var(--rose-light);
+      border-radius:var(--r-md);
+      padding:16px 28px;
+      margin-bottom:24px;
+    }
+    .price-badge .old-price{
+      font-size:.82rem;
+      color:var(--muted);
+      text-decoration:line-through;
+    }
+    .price-badge .new-price{
+      font-family:'Playfair Display',serif;
+      font-size:2.2rem;
+      line-height:1;
+      color:var(--rose-dark);
+      margin:2px 0 5px;
+    }
+    .price-badge .price-note{
+      font-size:.77rem;
+      color:var(--mid);
+      font-weight:500;
+    }
+
+    .hero-links{
+      margin-top:16px;
+      font-size:.8rem;
+      color:var(--muted);
+      text-align:center;
+    }
+    .hero-links a{
+      color:var(--rose);
+      text-decoration:underline;
+      font-weight:700;
+    }
+
+    .hero-trust{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      margin-top:22px;
+    }
+    .hero-trust span{
+      font-size:.78rem;
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .hero-trust .dot{
+      width:7px;height:7px;border-radius:50%;background:var(--rose);flex-shrink:0;
+    }
+
+    .divider{
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--rose-light),transparent);
+    }
+
+    section{padding:56px 0}
+    .section-label{text-align:center;margin-bottom:10px}
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.35rem,4vw,2rem);
+      line-height:1.24;
+      text-align:center;
+      margin-bottom:12px;
+      color:var(--charcoal);
+    }
+    .section-sub{
+      max-width:510px;
+      margin:0 auto 34px;
+      text-align:center;
+      color:var(--mid);
+      font-size:.95rem;
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media(min-width:560px){
+      .benefits-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    .benefit-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--r-sm);
+      padding:20px 14px;
+      text-align:center;
+      box-shadow:var(--shadow-sm);
+    }
+    .benefit-icon{font-size:1.75rem;display:block;margin-bottom:8px}
+    .benefit-title{font-size:.86rem;font-weight:600;color:var(--charcoal);line-height:1.35}
+
+    .preview{
+      background:var(--warm);
+    }
+    .preview-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .preview-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 16px;
+      box-shadow:var(--shadow-sm);
+    }
+    .preview-card h3{
+      font-size:1rem;
+      margin-bottom:6px;
+      color:var(--charcoal);
+    }
+    .preview-card p{
+      font-size:.82rem;
+      color:var(--mid);
+      line-height:1.45;
+      margin-bottom:8px;
+    }
+    .preview-size{
+      display:inline-block;
+      background:var(--rose-pale);
+      color:var(--rose-dark);
+      font-size:.72rem;
+      font-weight:700;
+      padding:5px 10px;
+      border-radius:999px;
+    }
+    .preview-foot{
+      margin-top:16px;
+      text-align:center;
+      font-size:.86rem;
+      color:var(--mid);
+      font-weight:500;
+    }
+
+    .receive{
+      background:var(--cream);
+    }
+    .receive-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--r-md);
+      padding:26px 22px;
+      box-shadow:var(--shadow-sm);
+    }
+    .receive-list{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .receive-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size:.92rem;
+      color:var(--mid);
+      padding:4px 0;
+    }
+    .receive-list .check{
+      color:var(--rose);
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .testimonials{
+      background:var(--rose-pale);
+    }
+    .testimonials-grid{
+      display:grid;
+      gap:14px;
+    }
+    @media(min-width:800px){
+      .testimonials-grid{grid-template-columns:1fr 1fr}
+    }
+    .testimonial-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px 18px;
+      box-shadow:var(--shadow-sm);
+      position:relative;
+    }
+    .testimonial-card .quote{
+      position:absolute;
+      top:14px;
+      left:16px;
+      font-size:1.8rem;
+      color:var(--rose-light);
+      font-family:'Playfair Display',serif;
+      line-height:1;
+      pointer-events:none;
+    }
+    .stars{
+      font-size:.95rem;
+      color:var(--gold);
+      margin-bottom:10px;
+      letter-spacing:.04em;
+      position:relative;
+      z-index:1;
+    }
+    .testimonial-text{
       font-size:.9rem;
       color:var(--mid);
-      font-style:italic;
-      background: var(--rose-pale);
-      border: 1px solid var(--rose-light);
-      border-radius: var(--r-sm);
-      padding: 16px 20px;
-      max-width: 500px;
-      margin: 0 auto;
-    ">
-      ✦ E isso é só uma pequena amostra dos mais de 1000 moldes prontos para imprimir e usar imediatamente.
-    </p>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ TESTIMONIALS ══════════════════════════════════════ -->
-<style>
-.testi-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 480px) { .testi-grid { grid-template-columns: 1fr 1fr; gap: 18px; } }
-
-.testi-card {
-  background: #fff;
-  border: 1px solid var(--rose-light);
-  border-radius: var(--r-md);
-  padding: 20px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  transition: transform .2s, box-shadow .2s;
-}
-.testi-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.testi-card::before {
-  content: '\201C';
-  position: absolute;
-  top: 8px; left: 12px;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  line-height: 1;
-  color: var(--rose-light);
-  pointer-events: none;
-  z-index: 0;
-}
-.testi-stars {
-  color: #f5a623;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  position: relative;
-  z-index: 1;
-  padding-left: 32px;
-}
-.testi-text {
-  font-size: .85rem;
-  color: var(--mid);
-  line-height: 1.55;
-  padding-top: 12px;
-}
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-}
-.testi-avatar {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .8rem;
-  font-weight: 700;
-  color: #fff;
-  flex-shrink: 0;
-}
-.testi-name {
-  font-size: .8rem;
-  font-weight: 600;
-  color: var(--charcoal);
-}
-</style>
-
-<section style="background:var(--rose-pale);padding:56px 0;">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Depoimentos</span></div>
-    <h2 class="section-title reveal">O que outras pessoas estão dizendo</h2>
-    <p class="section-sub reveal">Comentários de quem já começou a usar os moldes em casa</p>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Consegui usar mesmo sendo iniciante. Muito fácil de imprimir e os moldes já vêm no tamanho certo.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--rose),var(--rose-dark));">M</div>
-          <span class="testi-name">Mariana R.</span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Tem muitos modelos diferentes, vale muito a pena. Já usei varios e todos ficaram ótimos.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#9b4dca,#5d2a80);">L</div>
-          <span class="testi-name">Luciana S.</span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Usei os moldes infantis e ficaram perfeitos. Minha filha adorou as roupinhas que fiz.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#2d6a4f,#1a3d2e);">P</div>
-          <span class="testi-name">Patrícia A.</span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Os arquivos já vêm organizados e prontos para usar. Economizei muito tempo na hora de costurar.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--gold),#8a6a22);">F</div>
-          <span class="testi-name">Fernanda C.</span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Pelo valor que paguei, achei que viria pouca coisa. Quando abri o pacote fiquei surpresa com a quantidade de moldes.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#d4667a,#7a3040);">C</div>
-          <span class="testi-name">Carla M.</span>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Gostei porque tem moldes femininos, infantis e até para pet. Dá pra aproveitar bastante o material.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#7c5cbf,#4a3280);">J</div>
-          <span class="testi-name">Juliana T.</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ FAQ ═══════════════════════════════════════════════ -->
-<style>
-.faq-list { display: flex; flex-direction: column; gap: 10px; }
-.faq-item {
-  background: #fff;
-  border: 1px solid var(--rose-light);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-.faq-btn {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 16px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-  text-align: left;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--charcoal);
-  line-height: 1.4;
-}
-.faq-btn:hover { background: var(--rose-pale); }
-.faq-icon {
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: var(--rose-pale);
-  border: 1.5px solid var(--rose-light);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: .8rem;
-  color: var(--rose-dark);
-  font-weight: 700;
-  transition: transform .25s ease, background .2s;
-}
-.faq-item.open .faq-icon {
-  transform: rotate(45deg);
-  background: var(--rose);
-  border-color: var(--rose);
-  color: #fff;
-}
-.faq-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease, padding .3s ease;
-}
-.faq-item.open .faq-body { max-height: 200px; }
-.faq-body-inner {
-  padding: 0 18px 16px;
-  font-size: .86rem;
-  color: var(--mid);
-  line-height: 1.6;
-  border-top: 1px solid var(--rose-light);
-  padding-top: 12px;
-}
-</style>
-
-<section style="background:var(--cream);padding:56px 0;">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Dúvidas</span></div>
-    <h2 class="section-title reveal">Perguntas frequentes</h2>
-
-    <div class="faq-list reveal">
-
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          <span>Como vou receber os moldes?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body" role="region">
-          <div class="faq-body-inner">O produto é 100% digital. Após confirmar o pagamento, você recebe o acesso imediatamente — sem esperar por entrega física.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          <span>Os arquivos são físicos ou digitais?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body" role="region">
-          <div class="faq-body-inner">Os moldes são 100% digitais — nenhum item físico será enviado. Você baixa os arquivos em PDF e imprime quando quiser, quantas vezes quiser.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          <span>Preciso ter experiência em costura?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body" role="region">
-          <div class="faq-body-inner">Não. O pacote foi pensado para ajudar tanto iniciantes quanto quem já tem experiência.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          <span>Os moldes vêm organizados?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body" role="region">
-          <div class="faq-body-inner">Sim. Os arquivos chegam organizados por categorias (feminino, masculino, infantil e pet) para que você encontre e imprima o modelo certo sem perder tempo.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
-          <span>Posso imprimir em casa?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body" role="region">
-          <div class="faq-body-inner">Sim. Os arquivos em PDF são prontos para imprimir em qualquer impressora doméstica no tamanho A4.</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-  document.querySelectorAll('.faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-</script>
-
-
-<div class="divider"></div>
-
-<!-- ══ O QUE VOCÊ RECEBE ═════════════════════════════════ -->
-<section style="background:var(--charcoal);padding:52px 0;">
-  <div class="container">
-    <div class="section-label reveal"><span class="tag" style="background:rgba(245,213,219,.15);color:var(--rose-light);">Plano Profissional</span></div>
-    <h2 class="section-title reveal" style="color:#fff;">O que você recebe ao comprar</h2>
-    <p class="section-sub reveal" style="color:rgba(255,255,255,.5);">Tudo entregue digitalmente, com acesso imediato após o pagamento.</p>
-
-    <ul class="reveal" style="
-      list-style:none;
-      max-width:460px;
-      margin:0 auto;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
+    .testimonial-author{
       display:flex;
-      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+    .avatar{
+      width:38px;height:38px;border-radius:50%;
+      background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+      color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;
+      font-size:.86rem;
+      flex-shrink:0;
+    }
+    .testimonial-name{
+      font-size:.84rem;
+      font-weight:700;
+      color:var(--charcoal);
+    }
+    .testimonial-role{
+      font-size:.75rem;
+      color:var(--muted);
+    }
+
+    .faq{
+      background:#fff;
+    }
+    .faq-list{
+      display:grid;
       gap:12px;
-    ">
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span><strong>1000 moldes organizados</strong> por categoria (feminino, masculino, infantil e pet)</span>
-      </li>
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span>Arquivos em <strong>PDF prontos para imprimir</strong> em papel A4 comum</span>
-      </li>
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span><strong>Vídeo aulas explicativas</strong> para usar os moldes com segurança</span>
-      </li>
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span><strong>E-book de apoio à costura</strong> com dicas e técnicas práticas</span>
-      </li>
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span><strong>Bônus exclusivo</strong> incluído no pacote completo</span>
-      </li>
-      <li style="display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:.92rem;">
-        <span style="color:var(--rose-light);font-weight:700;flex-shrink:0;margin-top:1px;">✦</span>
-        <span><strong>Acesso digital imediato</strong> — você recebe tudo logo após o pagamento</span>
-      </li>
-    </ul>
+    }
+    .faq-item{
+      background:var(--warm);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow-sm);
+    }
+    .faq-q{
+      font-weight:700;
+      font-size:.92rem;
+      color:var(--charcoal);
+      margin-bottom:6px;
+    }
+    .faq-a{
+      font-size:.88rem;
+      color:var(--mid);
+    }
 
-    <div style="margin-top:32px;text-align:center;">
-      <a href="SEU_LINK_CHECKOUT_PROFISSIONAL" class="btn btn-primary reveal" style="max-width:400px;">
-        ✦ QUERO ACESSAR OS 1000 MOLDES AGORA – R$19,90
-      </a>
-    </div>
-  </div>
-</section>
+    .plans{
+      background:var(--warm);
+    }
+    .urgency{
+      text-align:center;
+      font-size:.82rem;
+      color:#7a5f20;
+      background:var(--gold-light);
+      border:1px solid #ead8a8;
+      border-radius:14px;
+      padding:10px 14px;
+      margin:0 auto 24px;
+      max-width:520px;
+      font-weight:600;
+    }
 
+    .plans-grid{
+      display:grid;
+      gap:16px;
+      align-items:start;
+    }
+    @media(min-width:640px){
+      .plans-grid{grid-template-columns:1fr 1fr}
+    }
 
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Escolha seu plano</span></div>
-    <h2 class="section-title reveal">Escolha como você quer acessar os moldes hoje</h2>
-    <p class="section-sub reveal">Escolha o seu nível de acesso — entrega imediata em PDF, prontos para imprimir.</p>
-
-    <div class="plans-funnel reveal">
-
-      <!-- STEP 1: PLANO BÁSICO -->
-      <div class="funnel-step">
-        <div class="funnel-step-label">① Opção de entrada</div>
-        <div class="plan-card" style="opacity:1;border-color:#e0d5d8;box-shadow:0 2px 8px rgba(180,80,100,.06);background:#fdf9fa;max-width:420px;margin:0 auto;">
-          <div class="plan-name" style="color:var(--mid);font-size:.92rem;font-weight:600;">Plano Básico</div>
-          <div class="plan-qty" style="color:var(--mid);">150 moldes essenciais</div>
-          <div class="plan-price-old">De R$29,90</div>
-          <div class="plan-price" style="font-size:1.65rem;color:var(--mid);">R$5,90</div>
-          <ul class="plan-features" style="opacity:.8;">
-            <li><span class="check">✓</span> 150 moldes em PDF</li>
-            <li><span class="check">✓</span> Arquivos prontos para imprimir</li>
-            <li><span class="check">✓</span> Acesso imediato</li>
-          </ul>
-          <a href="SEU_LINK_CHECKOUT_BASICO" class="btn btn-outline" style="font-size:.82rem;padding:12px 20px;opacity:.85;">
-            Quero este plano
-          </a>
-        </div>
-      </div>
-
-      <!-- UPGRADE ARROW -->
-      <div class="funnel-arrow reveal">
-        <div class="funnel-arrow-line"></div>
-        <div class="funnel-arrow-bubble">
-          <span>💡</span>
-          <strong>Por apenas R$14 a mais</strong> leve 1000 moldes + vídeo aulas + e-book + bônus exclusivos
-        </div>
-        <div class="funnel-arrow-line"></div>
-        <div class="funnel-arrow-icon">↓</div>
-      </div>
-
-      <!-- STEP 2: PLANO PROFISSIONAL -->
-      <div class="funnel-step">
-        <div class="funnel-step-label featured-step-label">② Upgrade recomendado &nbsp;⭐ MAIS ESCOLHIDO</div>
-        <div class="plan-card featured" style="border-width:2.5px;max-width:420px;margin:0 auto;background:linear-gradient(160deg,#fff 50%,#fdf0f2 100%);box-shadow:0 12px 40px rgba(180,80,100,.18);">
-          <div class="plan-badge">⭐ MAIS ESCOLHIDO</div>
-          <div class="plan-name">Plano Profissional</div>
-          <div class="plan-qty">1000 moldes + bônus</div>
-          <div class="plan-price-old">De R$97,00</div>
-          <div class="plan-price">R$19,90</div>
-          <ul class="plan-features">
-            <li><span class="check">✓</span> 1000 moldes organizados por categoria</li>
-            <li><span class="check">✓</span> Arquivos em PDF prontos para imprimir</li>
-            <li><span class="check">✓</span> Vídeo aulas explicativas</li>
-            <li><span class="check">✓</span> E-book de apoio à costura</li>
-            <li><span class="check">✓</span> Bônus exclusivo incluído</li>
-            <li><span class="check">✓</span> Acesso imediato após a compra</li>
-          </ul>
-          <p style="text-align:center;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-bottom:8px;">
-            ✦ Acesso imediato após a compra &nbsp;•&nbsp; Arquivos em PDF prontos para imprimir
-          </p>
-          <a href="SEU_LINK_CHECKOUT_PROFISSIONAL" class="btn btn-primary" style="font-size:1.05rem;padding:20px 28px;">
-            ✦ QUERO ACESSAR OS 1000 MOLDES AGORA – R$19,90
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="upsell-note reveal">
-      💡 Por apenas <strong>R$14 a mais</strong>, você sai do básico e recebe <strong>1000 moldes + vídeo aulas + e-book + bônus</strong> — a escolha mais inteligente!
-    </div>
-
-    <!-- CHECKOUT LINK -->
-    <a href="SEU_LINK_CHECKOUT_PROFISSIONAL" class="btn btn-primary reveal">
-      ✦ QUERO OS 1000 MOLDES PROFISSIONAIS
-    </a>
-
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ BONUSES ════════════════════════════════════════════ -->
-<section class="bonuses">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag" style="background:rgba(245,213,219,.15);color:var(--rose-light);">Somente no Plano Profissional</span></div>
-    <h2 class="section-title reveal">Bônus incluídos — sem custo extra</h2>
-    <p class="section-sub reveal">Ao escolher o Plano Profissional, você recebe muito mais do que moldes:</p>
-
-    <div class="bonuses-list">
-
-      <div class="bonus-item reveal">
-        <div class="bonus-icon">🎬</div>
-        <div class="bonus-text">
-          <span class="bonus-gratis">Grátis</span>
-          <h3>Vídeo Aulas Explicativas</h3>
-          <p>Aprenda no seu ritmo com aulas em vídeo que ensinam a usar cada tipo de molde, do básico ao avançado.</p>
-        </div>
-      </div>
-
-      <div class="bonus-item reveal">
-        <div class="bonus-icon">📖</div>
-        <div class="bonus-text">
-          <span class="bonus-gratis">Grátis</span>
-          <h3>E-book de Apoio à Costura</h3>
-          <p>Guia completo em formato digital com dicas, técnicas e passo a passo para turbinar sua produção.</p>
-        </div>
-      </div>
-
-      <div class="bonus-item reveal">
-        <div class="bonus-icon">🎁</div>
-        <div class="bonus-text">
-          <span class="bonus-gratis">Grátis</span>
-          <h3>Bônus Exclusivo</h3>
-          <p>Surpresa especial para quem escolhe o Plano Profissional — revelada no momento do acesso.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<div class="divider" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);"></div>
-
-<!-- ══ FOR WHOM ════════════════════════════════════════════ -->
-<section class="forwhom">
-  <div class="container">
-
-    <div class="section-label reveal"><span class="tag">Para quem é este pack?</span></div>
-    <h2 class="section-title reveal">Este pack foi feito <em class="serif" style="color:var(--rose);">para você</em></h2>
-    <p class="section-sub reveal">Não importa o seu nível — os moldes se adaptam ao seu objetivo.</p>
-
-    <div class="forwhom-grid">
-
-      <div class="forwhom-card reveal">
-        <div class="forwhom-num">1</div>
-        <div>
-          <h3>🌱 Iniciantes na costura</h3>
-          <p>Moldes claros, com marcações e tamanhos bem definidos para quem está começando agora.</p>
-        </div>
-      </div>
-
-      <div class="forwhom-card reveal">
-        <div class="forwhom-num">2</div>
-        <div>
-          <h3>💸 Quem quer economizar</h3>
-          <p>Pare de pagar caro em costureira. Faça você mesma em casa com qualidade profissional.</p>
-        </div>
-      </div>
-
-      <div class="forwhom-card reveal">
-        <div class="forwhom-num">3</div>
-        <div>
-          <h3>🛍️ Quem quer costurar para vender</h3>
-          <p>Peças padronizadas e de qualidade para montar seu próprio negócio de moda sob medida.</p>
-        </div>
-      </div>
-
-      <div class="forwhom-card reveal">
-        <div class="forwhom-num">4</div>
-        <div>
-          <h3>✂️ Quem quer ajustar roupas</h3>
-          <p>Use os moldes como base para reformar e adaptar peças que você já tem no guarda-roupa.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ GUARANTEE ═════════════════════════════════════════ -->
-<section class="guarantee">
-  <div class="container">
-
-    <div class="guarantee-box reveal">
-      <div class="guarantee-badge">🛡️</div>
-      <h2 class="serif">Garantia total de 7 dias</h2>
-      <p>
-        Compre com total segurança. Se por qualquer motivo você não ficar satisfeita,
-        basta nos enviar uma mensagem em até <strong>7 dias</strong> e devolvemos
-        <strong>100% do seu dinheiro</strong> — sem burocracia, sem perguntas.
-      </p>
-      <br>
-      <a href="SEU_LINK_CHECKOUT_COMPLETO" class="btn btn-outline" style="margin-top:8px;max-width:320px;">
-        Comprar com segurança →
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ FINAL CTA ══════════════════════════════════════════ -->
-<section class="final-cta">
-  <div class="container">
-
-    <h2 class="reveal">
-      Pronta para começar a<br><em>costurar do jeito que você sempre quis?</em>
-    </h2>
-    <p class="reveal">Acesso imediato, sem espera. Só imprimir e colocar a mão na massa.</p>
-
-    <div class="price-row reveal">
-      <span class="final-old">De R$97,00</span>
-      <span class="final-new">R$19,90</span>
-      <span class="final-plan">Plano Profissional • 1000 moldes + vídeo aulas + e-book + bônus</span>
-    </div>
-
-    <!-- CHECKOUT LINK -->
-    <a href="SEU_LINK_CHECKOUT_COMPLETO" class="btn btn-primary reveal" style="font-size:1.1rem;padding:22px 32px;max-width:460px;">
-      ✦ SIM, QUERO OS 1000 MOLDES COMPLETOS
-    </a>
-
-    <div class="final-trust reveal">
-      <span class="final-trust-item"><span>🔒</span> Pagamento seguro</span>
-      <span class="final-trust-item"><span>⚡</span> Entrega imediata</span>
-      <span class="final-trust-item"><span>🛡️</span> Garantia de 7 dias</span>
-      <span class="final-trust-item"><span>📄</span> Formato PDF</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ FOOTER ═════════════════════════════════════════════ -->
-<footer class="footer">
-  <p>© 2025 Pack de Moldes Femininos — Todos os direitos reservados</p>
-  <p style="margin-top:6px;">
-    <a href="#">Política de Privacidade</a> &nbsp;•&nbsp;
-    <a href="#">Termos de Uso</a> &nbsp;•&nbsp;
-    <a href="#">Contato</a>
-  </p>
-  <p style="margin-top:10px;">
-    Este produto é um infoproduto digital. Após a compra, o acesso é liberado imediatamente pelo e-mail cadastrado.
-  </p>
-</footer>
-
-<!-- ══ STICKY CTA (mobile) ═══════════════════════════════ -->
-<div class="sticky-cta" id="stickyCta">
-  <!-- CHECKOUT LINK -->
-  <a href="SEU_LINK_CHECKOUT_COMPLETO" class="btn btn-primary">
-    ✦ QUERO OS 1000 MOLDES — R$19,90
-  </a>
-</div>
-
-<!-- ══ JS: Scroll Reveal + Sticky Hide ═══════════════════ -->
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Hide sticky when final CTA visible
-  const finalCta = document.querySelector('.final-cta');
-  const sticky   = document.getElementById('stickyCta');
-  const stickyObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      sticky.style.display = e.isIntersecting ? 'none' : 'block';
-    });
-  }, { threshold: 0.2 });
-  stickyObs.observe(finalCta);
-</script>
-
-</body>
-</html>
+    .plan-card{
+      background:#fff;
+      border:2px solid var(--line);
+      border-radius:24px;
+      padding:28px 22px;
+      text-align:center;
+      position:relative;
+      box-shadow:var(--shadow-sm);
+    }
+    .plan-card.featured{
+      border-color:var(--rose);
+      background:linear-gradient(160deg,#fff 62%,var(--rose-pale) 100%);
+      box-shadow:var(--shadow-md);
+    }
+    .plan-badge{
+      position:absolute;
+      top:-13px;
+      left:50%;
+      transform:translateX(-50%);
+      background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+      color:#
