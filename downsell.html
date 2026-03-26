@@ -33,7 +33,6 @@
       align-items: center;
     }
 
-    /* ── TOP BAR ── */
     .top-bar {
       width: 100%;
       background: linear-gradient(90deg, #8B3050, var(--rose-dark), #8B3050);
@@ -46,7 +45,6 @@
       padding: 9px 16px;
     }
 
-    /* ── CARD ── */
     .card {
       width: 100%;
       max-width: 480px;
@@ -54,7 +52,6 @@
       padding: 0 0 40px;
     }
 
-    /* ── HERO ── */
     .hero {
       background: var(--cream);
       border-bottom: 1px solid var(--border);
@@ -72,7 +69,6 @@
       pointer-events: none;
     }
 
-    /* Urgency pulse dot */
     .urgency-tag {
       display: inline-flex;
       align-items: center;
@@ -125,7 +121,6 @@
       line-height: 1.5;
     }
 
-    /* ── PRICE BADGE (prominent for downsell) ── */
     .price-highlight {
       margin: 22px 24px 0;
       background: #fff;
@@ -197,19 +192,21 @@
       opacity: 0.85;
     }
 
-    /* ── DIVIDER ── */
     .divider {
       display: flex;
       align-items: center;
       gap: 10px;
       padding: 18px 24px 0;
     }
-    .divider::before, .divider::after {
+
+    .divider::before,
+    .divider::after {
       content: '';
       flex: 1;
       height: 1px;
       background: var(--border);
     }
+
     .divider span {
       font-size: 0.7rem;
       font-weight: 700;
@@ -218,7 +215,6 @@
       color: var(--rose-light);
     }
 
-    /* ── BULLETS ── */
     .benefits {
       padding: 18px 24px 0;
       display: grid;
@@ -276,7 +272,6 @@
       line-height: 1.35;
     }
 
-    /* ── CTA ── */
     .cta-area {
       padding: 22px 24px 0;
       display: flex;
@@ -294,7 +289,6 @@
       font-size: 1rem;
       font-weight: 800;
       text-align: center;
-      text-decoration: none;
       border: none;
       border-radius: 14px;
       padding: 18px 20px;
@@ -305,6 +299,8 @@
       transition: transform 0.15s, box-shadow 0.15s;
       position: relative;
       overflow: hidden;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
     .btn-primary::after {
@@ -357,6 +353,8 @@
       border-radius: 10px;
       transition: color 0.15s, text-decoration-color 0.15s, background 0.15s;
       line-height: 1.4;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
     .btn-secondary:hover {
@@ -365,7 +363,6 @@
       background: rgba(194, 96, 122, 0.05);
     }
 
-    /* ── FOOTER ── */
     .page-footer {
       padding: 28px 24px 10px;
       text-align: center;
@@ -388,7 +385,7 @@
         Oferta por tempo limitado
       </div>
       <h1>Última oportunidade com <em>desconto especial</em></h1>
-      <p>Adicione agora mais de 850 moldes extras ao pacote que você já adquiriu por apenas <strong>R$7,90</strong></p>
+      <p>Adicione agora mais de 850 moldes extras ao pacote que você já adquiriu por apenas <strong>R$9,90</strong></p>
       <p style="margin-top:10px;font-size:0.82rem;color:var(--text-mid);font-weight:600;font-style:italic;">Oferta especial complementar ao pacote de 150 moldes que você acabou de adquirir.</p>
     </div>
 
@@ -396,10 +393,10 @@
       <div class="price-left">
         <div class="was">De R$19,90</div>
         <div class="now-label">Agora por</div>
-        <div class="price-val"><sup>R$</sup>7<sup>,90</sup></div>
+        <div class="price-val"><sup>R$</sup>9<sup>,90</sup></div>
       </div>
       <div class="price-right">
-        <div class="discount">-60%</div>
+        <div class="discount">-50%</div>
         <div class="off">desconto</div>
       </div>
     </div>
@@ -447,18 +444,18 @@
 
     <div class="cta-area">
 
-      <a href="#" class="btn-primary kirvano-payment-trigger">
-        Quero liberar agora por R$7,90
-      </a>
+      <button type="button" class="btn-primary kirvano-payment-trigger">
+        Quero liberar agora por R$9,90
+      </button>
 
       <div class="trust">
         <svg viewBox="0 0 16 16"><path d="M8 1L10.5 6H15L11 9.5L12.5 14.5L8 11.5L3.5 14.5L5 9.5L1 6H5.5L8 1Z"/></svg>
         Acesso imediato &nbsp;•&nbsp; Produto digital &nbsp;•&nbsp; Download seguro
       </div>
 
-      <a href="#" class="btn-secondary kirvano-refuse-trigger">
+      <button type="button" class="btn-secondary kirvano-refuse-trigger">
         Não, prefiro continuar apenas com o plano básico
-      </a>
+      </button>
 
     </div>
 
@@ -466,12 +463,12 @@
 
   </div>
 
-<script>
-  var offer = "bb8fb82b-a9de-42dd-8e90-f95419c2a5e5";
-  var nextPageURL = null;
-  var refusePageURL = null;
-</script>
-<script src="https://snippets.kirvano.com/upsell.min.js"></script>
+  <script>
+    var offer = "bb8fb82b-a9de-42dd-8e90-f95419c2a5e5";
+    var nextPageURL = "https://meusmoldes.shop/";
+    var refusePageURL = "https://meusmoldes.shop/";
+  </script>
+  <script src="https://snippets.kirvano.com/upsell.min.js"></script>
 
 </body>
 </html>
