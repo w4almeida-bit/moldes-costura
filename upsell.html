@@ -186,7 +186,77 @@
       line-height: 1.4;
     }
 
-    /* ── PRICE ── */
+    /* ── PRICE HIGHLIGHT ── */
+    .price-highlight {
+      margin: 22px 24px 0;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 18px var(--shadow);
+    }
+
+    .price-left { flex: 1; }
+
+    .price-left .was {
+      font-size: 0.72rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      text-decoration: line-through;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+
+    .price-left .now-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 2px;
+    }
+
+    .price-left .price-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .price-left .price-val sup {
+      font-size: 1rem;
+      vertical-align: super;
+    }
+
+    .price-right {
+      background: linear-gradient(135deg, var(--rose-dark), var(--rose));
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .price-right .discount {
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .price-right .off {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ── PRICE (old simple block kept for reference, overridden) ── */
     .price-block {
       margin: 22px 24px 0;
       background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 100%);
@@ -254,6 +324,12 @@
       transition: transform 0.15s, box-shadow 0.15s;
       position: relative;
       overflow: hidden;
+      animation: btnPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes btnPulse {
+      0%, 100% { box-shadow: 0 6px 20px rgba(39, 174, 96, 0.35); transform: scale(1); }
+      50%       { box-shadow: 0 8px 32px rgba(39, 174, 96, 0.55); transform: scale(1.025); }
     }
 
     .btn-primary::after {
@@ -290,28 +366,26 @@
     .btn-secondary {
       display: block;
       width: 100%;
-      font-size: 0.97rem;
+      font-size: 0.92rem;
       color: var(--text-mid);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-color: var(--border);
-      background: none;
-      border: none;
+      text-decoration: none;
+      background: #fff;
+      border: 1.5px solid var(--border);
       cursor: pointer;
       font-family: 'Nunito', sans-serif;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
       padding: 14px 20px;
       margin-top: 4px;
-      border-radius: 10px;
-      transition: color 0.15s, text-decoration-color 0.15s, background 0.15s;
+      border-radius: 14px;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
       line-height: 1.4;
     }
 
     .btn-secondary:hover {
       color: var(--rose-dark);
-      text-decoration-color: var(--rose-light);
-      background: rgba(194, 96, 122, 0.05);
+      border-color: var(--rose-light);
+      background: rgba(194, 96, 122, 0.04);
     }
 
     /* ── FOOTER ── */
@@ -386,16 +460,22 @@
 
     </div>
 
-    <div class="price-block">
-      <div class="price-label">Tudo isso por apenas</div>
-      <div class="price-value"><sup>R$</sup>14<sup>,90</sup></div>
-      <div class="price-note">pagamento único • sem mensalidade</div>
+    <div class="price-highlight">
+      <div class="price-left">
+        <div class="was">De R$19,90</div>
+        <div class="now-label">Agora por</div>
+        <div class="price-val"><sup>R$</sup>9<sup>,90</sup></div>
+      </div>
+      <div class="price-right">
+        <div class="discount">-50%</div>
+        <div class="off">desconto</div>
+      </div>
     </div>
 
     <div class="cta-area">
 
-      <a href="#" class="btn-primary">
-        Sim! Quero liberar agora por R$14,90
+      <a href="#" class="btn-primary kirvano-payment-trigger">
+        Sim! Quero liberar agora por R$9,90
       </a>
 
       <div class="trust">
@@ -403,7 +483,7 @@
         Acesso imediato &nbsp;•&nbsp; Produto digital &nbsp;•&nbsp; Download seguro
       </div>
 
-      <a href="downsell.html" class="btn-secondary">
+      <a href="https://meusmoldes.shop/downsell.html" class="btn-secondary kirvano-refuse-trigger">
         Não, prefiro continuar apenas com o plano básico
       </a>
 
@@ -412,6 +492,13 @@
     <div class="page-footer">© Todos os direitos reservados</div>
 
   </div>
+
+<script>
+  var offer = "aa9be15f-05f7-4116-9b2a-27fc5c2f8241";
+  var nextPageURL = null;
+  var refusePageURL = "https://meusmoldes.shop/downsell.html";
+</script>
+<script src="https://snippets.kirvano.com/upsell.min.js"></script>
 
 </body>
 </html>
