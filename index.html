@@ -1,164 +1,778 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moldes de Costura Premium</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    var offer = "bb8fb82b-a9de-42dd-8e90-f95419c2a5e5";
-    var nextPageURL = null;
-    var refusePageURL = null;
-  </script>
-  <script src="https://snippets.kirvano.com/upsell.min.js"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pack de Moldes de Costura — Costure em Casa</title>
+<meta name="description" content="1000 moldes de costura prontos para imprimir e usar em casa, mesmo sendo iniciante. Acesso imediato, PDF, vídeo aulas, e-book e bônus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --rose:       #d4667a;
+  --rose-light: #f5d5db;
+  --rose-pale:  #fdf0f2;
+  --rose-dark:  #b04d62;
+  --cream:      #faf7f4;
+  --warm-white: #fff9f9;
+  --charcoal:   #1e1a1b;
+  --mid:        #5a4f52;
+  --muted:      #9b8c8f;
+  --gold:       #c9a84c;
+  --gold-light: #f7ecd4;
+  --shadow-sm:  0 2px 12px rgba(180,80,100,.10);
+  --shadow-md:  0 8px 32px rgba(180,80,100,.15);
+  --shadow-lg:  0 20px 60px rgba(180,80,100,.18);
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 32px;
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.container { width: 100%; max-width: 680px; margin: 0 auto; padding: 0 20px; }
+.serif { font-family: 'Playfair Display', serif; }
+.tag {
+  display: inline-block;
+  background: var(--rose-light);
+  color: var(--rose-dark);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-rose {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,102,122,.45); }
+  70%       { box-shadow: 0 0 0 14px rgba(212,102,122,0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.fade-up { animation: fadeUp .7s ease both; }
+.delay-1 { animation-delay: .15s; }
+.delay-2 { animation-delay: .30s; }
+.delay-3 { animation-delay: .45s; }
+.delay-4 { animation-delay: .60s; }
+
+/* ── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transition: left .4s ease;
+}
+.btn:hover::after { left: 150%; }
+.btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  animation: pulse-rose 2.4s ease infinite;
+  font-size: 1.05rem;
+  padding: 20px 28px;
+}
+.btn-primary:hover { box-shadow: var(--shadow-lg); animation: none; }
+
+.btn-secondary {
+  background: var(--charcoal);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(30,26,27,.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--rose);
+  color: var(--rose);
+  font-size: .9rem;
+  padding: 14px 24px;
+}
+.btn-outline:hover { background: var(--rose-pale); }
+
+/* ── TOP BAR ─────────────────────────────────────────── */
+.topbar {
+  background: var(--charcoal);
+  color: #fff;
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  padding: 9px 20px;
+}
+.topbar span { color: var(--rose-light); }
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+  background: var(--warm-white);
+  padding: 52px 0 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--rose-light) 0%, transparent 70%);
+  opacity: .55;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--rose-light) 0%, transparent 70%);
+  opacity: .4;
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+
+.hero-icon {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--rose-light), #fbe8ec);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: var(--shadow-sm);
+  font-size: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.65rem, 5vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 18px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--mid);
+  margin-bottom: 32px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--rose-pale);
+  border: 1.5px solid var(--rose-light);
+  border-radius: var(--r-md);
+  padding: 16px 28px;
+  margin-bottom: 32px;
+}
+.price-badge .old-price {
+  font-size: .85rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  letter-spacing: .02em;
+}
+.price-badge .new-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1;
+  margin: 2px 0 4px;
+}
+.price-badge .price-note {
+  font-size: .75rem;
+  color: var(--mid);
+  font-weight: 500;
+}
+
+.hero-trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 24px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.trust-item .dot {
+  width: 7px; height: 7px;
+  background: var(--rose);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── DIVIDER ─────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rose-light), transparent);
+  margin: 0;
+}
+
+/* ── SECTION BASE ────────────────────────────────────── */
+section { padding: 56px 0; }
+.section-label {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.section-sub {
+  text-align: center;
+  color: var(--mid);
+  font-size: .95rem;
+  margin-bottom: 40px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── BENEFITS ────────────────────────────────────────── */
+.benefits { background: var(--cream); }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (min-width: 500px) {
+  .benefits-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.benefit-card {
+  background: #fff;
+  border: 1px solid var(--rose-light);
+  border-radius: var(--r-sm);
+  padding: 20px 14px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s;
+}
+.benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.benefit-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+.benefit-title {
+  font-weight: 600;
+  font-size: .85rem;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+/* ── PLANS ───────────────────────────────────────────── */
+.plans { background: var(--warm-white); }
+.plans-grid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (min-width: 520px) {
+  .plans-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.plan-card {
+  background: #fff;
+  border: 2px solid var(--rose-light);
+  border-radius: var(--r-md);
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.plan-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.plan-card.featured {
+  border-color: var(--rose);
+  background: linear-gradient(160deg, #fff 60%, var(--rose-pale) 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(180,60,80,.3);
+}
+
+.plan-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.plan-qty {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.plan-price-old {
+  font-size: .8rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+.plan-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: .84rem;
+  color: var(--mid);
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0;
+}
+.plan-features li .check { color: var(--rose); flex-shrink: 0; font-weight: 700; }
+
+.upsell-note {
+  text-align: center;
+  background: var(--gold-light);
+  border: 1px solid #e8d4a0;
+  border-radius: var(--r-sm);
+  padding: 14px 20px;
+  font-size: .88rem;
+  color: #7a5f20;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.upsell-note strong { color: #5a4210; }
+
+/* ── BONUSES ─────────────────────────────────────────── */
+.bonuses { background: var(--charcoal); }
+.bonuses .section-title { color: #fff; }
+.bonuses .section-sub { color: rgba(255,255,255,.55); }
+.bonuses-list { display: grid; gap: 12px; }
+.bonus-item {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: background .2s;
+}
+.bonus-item:hover { background: rgba(255,255,255,.1); }
+.bonus-icon {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, var(--rose-light), #fbe8ec);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.bonus-text h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.bonus-text p {
+  font-size: .8rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.45;
+}
+.bonus-gratis {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 100px;
+  margin-bottom: 6px;
+}
+
+/* ── FOR WHOM ────────────────────────────────────────── */
+.forwhom { background: var(--rose-pale); }
+.forwhom-grid { display: grid; gap: 12px; }
+@media (min-width: 500px) {
+  .forwhom-grid { grid-template-columns: 1fr 1fr; }
+}
+.forwhom-card {
+  background: #fff;
+  border-radius: var(--r-sm);
+  padding: 20px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.forwhom-num {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.forwhom-card h3 { font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
+.forwhom-card p  { font-size: .8rem; color: var(--mid); line-height: 1.4; }
+
+/* ── GUARANTEE ───────────────────────────────────────── */
+.guarantee { background: #fff; }
+.guarantee-box {
+  border: 2px solid var(--rose-light);
+  border-radius: var(--r-lg);
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.guarantee-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at top center, var(--rose-pale) 0%, transparent 70%);
+  pointer-events: none;
+}
+.guarantee-badge {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(180,60,80,.3);
+  position: relative;
+}
+.guarantee-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+}
+.guarantee-box p {
+  font-size: .9rem;
+  color: var(--mid);
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ── FINAL CTA ───────────────────────────────────────── */
+.final-cta {
+  background: linear-gradient(160deg, var(--charcoal) 0%, #2e1a20 100%);
+  padding: 64px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,102,122,.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.final-cta .container { position: relative; }
+.final-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.final-cta h2 em { color: var(--rose-light); font-style: italic; }
+.final-cta p {
+  color: rgba(255,255,255,.55);
+  font-size: .9rem;
+  margin-bottom: 36px;
+}
+.final-cta .price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+.final-cta .final-old {
+  font-size: .9rem;
+  color: rgba(255,255,255,.35);
+  text-decoration: line-through;
+}
+.final-cta .final-new {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--rose-light);
+  line-height: 1;
+}
+.final-cta .final-plan {
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
+  font-weight: 500;
+}
+
+.final-trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+.final-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.45);
+}
+.final-trust-item span { font-size: 1rem; }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 28px 20px;
+  text-align: center;
+  font-size: .75rem;
+  color: rgba(255,255,255,.25);
+  line-height: 1.8;
+}
+.footer a { color: rgba(255,255,255,.4); }
+
+/* ── STICKY BOTTOM (mobile) ──────────────────────────── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.12);
+  padding: 12px 20px;
+  z-index: 999;
+}
+.sticky-cta .btn { max-width: 100%; font-size: .9rem; padding: 16px; }
+@media (max-width: 600px) { .sticky-cta { display: block; } }
+
+/* ── SCROLL REVEAL ───────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── PLANS FUNNEL ────────────────────────────────────── */
+.plans-funnel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+.funnel-step {
+  width: 100%;
+  max-width: 460px;
+}
+.funnel-step-label {
+  text-align: center;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.featured-step-label {
+  color: var(--rose-dark);
+  font-size: .75rem;
+}
+.funnel-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  width: 100%;
+  max-width: 460px;
+}
+.funnel-arrow-line {
+  width: 2px;
+  height: 16px;
+  background: linear-gradient(to bottom, var(--rose-light), var(--rose));
+}
+.funnel-arrow-bubble {
+  background: var(--gold-light);
+  border: 1px solid #e8d4a0;
+  border-radius: var(--r-sm);
+  padding: 10px 16px;
+  font-size: .82rem;
+  color: #7a5f20;
+  text-align: center;
+  width: 100%;
+  line-height: 1.45;
+}
+.funnel-arrow-bubble span { margin-right: 4px; }
+.funnel-arrow-icon {
+  font-size: 1.4rem;
+  color: var(--rose);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+</style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
 
-  <section class="relative bg-gradient-to-br from-pink-100 via-white to-purple-100 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-center">
-      <div class="inline-block bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold mb-6 shadow">
-        OFERTA ESPECIAL
-      </div>
+<!-- TOP BAR -->
+<div class="topbar">
+  🪡 Entrega <span>100% digital</span> — Acesso imediato após o pagamento
+</div>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl mx-auto">
-        Escolha o plano ideal e receba seus <span class="text-pink-600">moldes de costura</span> agora mesmo
-      </h1>
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
 
-      <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
-        Acesso imediato, arquivos em PDF prontos para imprimir e usar. Ideal para iniciantes e costureiras que querem praticidade.
-      </p>
+    <div class="hero-icon fade-up">✂️</div>
 
-      <div class="mt-10 flex justify-center">
-        <img src="https://i.imgur.com/IBk6kJm.png" alt="Moldes de Costura" class="max-w-full md:max-w-3xl rounded-3xl shadow-2xl" />
-      </div>
+    <div class="tag fade-up delay-1">Pack de Moldes de Costura</div>
 
-      <div class="mt-10 animate-bounce">
-        <a href="#planos" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-4 rounded-full shadow-lg transition">
-          VER PLANOS
-        </a>
-      </div>
+    <h1 class="fade-up delay-2">
+      1000 moldes de costura prontos para imprimir e usar em casa —
+      <em>mesmo sendo iniciante</em>
+    </h1>
+
+    <p class="hero-sub fade-up delay-3">
+      Comece agora com <strong>150 moldes prontos para imprimir</strong> por apenas <strong>R$5,90</strong> ou escolha o pacote completo com <strong>1000 moldes + vídeo aulas + e-book + bônus</strong> por <strong>R$19,90</strong>
+    </p>
+
+    <p class="fade-up delay-3" style="font-size:.88rem;color:var(--mid);text-align:center;max-width:520px;margin:0 auto 20px;">
+      Baixe imediatamente após a compra e comece hoje mesmo a criar suas próprias roupas em casa.
+    </p>
+
+    <div class="price-badge fade-up delay-3">
+      <span class="old-price">De R$29,90</span>
+      <span class="new-price">R$5,90</span>
+      <span class="price-note">150 moldes em PDF • Acesso imediato</span>
     </div>
-  </section>
 
-  <section id="planos" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl md:text-5xl font-extrabold">Escolha seu acesso</h2>
-        <p class="text-gray-600 mt-4 text-lg">Planos com pagamento único e acesso imediato</p>
-      </div>
+    <p class="fade-up delay-3" style="font-size:.75rem;color:var(--muted);text-align:center;letter-spacing:.04em;margin-bottom:10px;">
+      ✦ Acesso digital imediato &nbsp;•&nbsp; Arquivos em PDF imprimíveis &nbsp;•&nbsp; Ideal para iniciantes
+    </p>
 
-      <div class="grid md:grid-cols-2 gap-8 items-stretch">
+    <!-- CHECKOUT LINK: substitua o href pelo link do seu checkout -->
+    <a href="#planos" class="btn btn-primary fade-up delay-4">
+      ✦ QUERO MEUS MOLDES AGORA
+    </a>
 
-        <!-- Plano 5,90 -->
-        <div class="border border-pink-200 rounded-3xl shadow-xl p-8 flex flex-col justify-between relative overflow-hidden">
-          <div>
-            <div class="absolute top-0 right-0 bg-pink-600 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl">
-              MAIS ESCOLHIDO
-            </div>
+    <p class="fade-up delay-4" style="margin-top:14px;font-size:.78rem;color:var(--muted);text-align:center;">
+      Ou veja o <a href="#planos" style="color:var(--rose);font-weight:600;text-decoration:underline;">pacote completo com 1000 moldes por R$19,90 ↓</a>
+    </p>
 
-            <h3 class="text-2xl font-bold mb-3">Plano Iniciante</h3>
-            <p class="text-gray-600 mb-6">Perfeito para quem quer começar agora com um baixo investimento.</p>
-
-            <div class="mb-6">
-              <p class="text-sm text-gray-400 line-through">De R$19,90</p>
-              <p class="text-5xl font-extrabold text-pink-600">R$5,90</p>
-              <p class="text-gray-500 mt-1">Pagamento único</p>
-            </div>
-
-            <ul class="space-y-3 text-left text-gray-700 mb-8">
-              <li>✅ Acesso imediato ao material</li>
-              <li>✅ Moldes em PDF prontos para imprimir</li>
-              <li>✅ Ideal para iniciantes</li>
-              <li>✅ Liberação rápida após o pagamento</li>
-            </ul>
-          </div>
-
-          <a href="https://pay.kirvano.com/d19d2cd7-b2c2-4009-a2bd-67f27296cfff" class="block text-center bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 rounded-2xl text-lg shadow-lg transition">
-            QUERO O DE R$5,90
-          </a>
-        </div>
-
-        <!-- Plano 19,90 -->
-        <div class="border border-purple-200 rounded-3xl shadow-xl p-8 flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-purple-50 to-white">
-          <div>
-            <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl">
-              MELHOR OFERTA
-            </div>
-
-            <h3 class="text-2xl font-bold mb-3">Plano Completo</h3>
-            <p class="text-gray-600 mb-6">Mais conteúdo, mais possibilidades e melhor custo-benefício.</p>
-
-            <div class="mb-6">
-              <p class="text-sm text-gray-400 line-through">De R$29,90</p>
-              <p class="text-5xl font-extrabold text-purple-600">R$19,90</p>
-              <p class="text-gray-500 mt-1">Pagamento único</p>
-            </div>
-
-            <ul class="space-y-3 text-left text-gray-700 mb-8">
-              <li>✅ Tudo do plano iniciante</li>
-              <li>✅ Mais variedade de moldes</li>
-              <li>✅ Melhor opção para quem quer aproveitar mais</li>
-              <li>✅ Acesso imediato após o pagamento</li>
-            </ul>
-          </div>
-
-          <a href="https://pay.kirvano.com/fb68107c-db38-47fa-ae0b-33156cd5741b" class="block text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-2xl text-lg shadow-lg transition">
-            QUERO O DE R$19,90
-          </a>
-        </div>
-
-      </div>
+    <div class="hero-trust fade-up delay-4">
+      <span class="trust-item"><span class="dot"></span>Pagamento 100% seguro</span>
+      <span class="trust-item"><span class="dot"></span>Garantia de 7 dias</span>
+      <span class="trust-item"><span class="dot"></span>Entrega imediata</span>
     </div>
-  </section>
 
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Por que esse material vale a pena?</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-        Você recebe arquivos prontos para imprimir, com acesso fácil e pagamento único. Uma solução prática para aprender, testar e produzir suas próprias peças.
-      </p>
+  </div>
+</section>
 
-      <div class="grid md:grid-cols-3 gap-6 text-left">
-        <div class="bg-white rounded-3xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">Acesso imediato</h3>
-          <p class="text-gray-600">Comprou, acessou. Sem esperar dias para começar.</p>
-        </div>
-        <div class="bg-white rounded-3xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">PDF pronto para imprimir</h3>
-          <p class="text-gray-600">Praticidade para usar no seu tempo e no seu ritmo.</p>
-        </div>
-        <div class="bg-white rounded-3xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">Ideal para iniciantes</h3>
-          <p class="text-gray-600">Mesmo quem está começando consegue aproveitar o material.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="divider"></div>
 
-  <section class="py-20 bg-pink-600 text-white text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-        Garanta agora seu acesso
-      </h2>
-      <p class="text-lg md:text-xl text-pink-100 mb-10">
-        Escolha o plano ideal para você e receba tudo imediatamente após o pagamento.
-      </p>
+<!-- ══ BENEFITS ══════════════════════════════════════════ -->
+<section class="benefits">
+  <div class="container">
 
-      <div class="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="https://pay.kirvano.com/d19d2cd7-b2c2-4009-a2bd-67f27296cfff" class="bg-white text-pink-600 hover:bg-pink-100 font-bold px-8 py-4 rounded-2xl shadow-lg transition">
-          ACESSO POR R$5,90
-        </a>
-        <a href="https://pay.kirvano.com/fb68107c-db38-47fa-ae0b-33156cd5741b" class="bg-purple-800 text-white hover:bg-purple-900 font-bold px-8 py-4 rounded-2xl shadow-lg transition">
-          ACESSO POR R$19,90
-        </a>
-      </div>
-    </div>
-  </section>
-
-</body>
-</html>
+    <div class="section-label reveal"><span class="tag">Por que você vai amar</span></div>
+    <h2 class="section-title reveal">Tudo pensado para simplificar sua costura</h2>
+    <p class="section-sub reveal">Sem complicação. Só imprimir e costurar.</
